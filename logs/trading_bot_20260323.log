@@ -1,0 +1,122 @@
+2026-03-23 13:55:05 | INFO     | root | Logging initialised → logs\trading_bot_20260323.log
+2026-03-23 13:55:05 | INFO     | root | Logging initialised → logs\trading_bot_20260323.log
+2026-03-23 13:55:05 | DEBUG    | __main__ | CLI args: {'api_key': None, 'api_secret': None, 'symbol': 'BTCUSDT', 'side': 'BUY', 'order_type': 'MARKET', 'quantity': 0.001, 'price': None, 'stop_price': None, 'log_level': 'DEBUG'}
+2026-03-23 13:56:38 | INFO     | root | Logging initialised → logs\trading_bot_20260323.log
+2026-03-23 13:56:38 | INFO     | root | Logging initialised → logs\trading_bot_20260323.log
+2026-03-23 13:56:38 | DEBUG    | __main__ | CLI args: {'api_key': None, 'api_secret': None, 'symbol': 'BTCUSDT', 'side': 'BUY', 'order_type': 'MARKET', 'quantity': 0.001, 'price': None, 'stop_price': None, 'log_level': 'DEBUG'}
+2026-03-23 13:56:38 | DEBUG    | bot.validators | Symbol validated: BTCUSDT
+2026-03-23 13:56:38 | DEBUG    | bot.validators | Side validated: BUY
+2026-03-23 13:56:38 | DEBUG    | bot.validators | Order type validated: MARKET
+2026-03-23 13:56:38 | DEBUG    | bot.validators | Quantity validated: 0.001
+2026-03-23 13:56:38 | DEBUG    | bot.validators | Price not required for MARKET order.
+2026-03-23 13:56:38 | INFO     | bot.client | BinanceClient initialised → base_url=https://demo-fapi.binance.com
+2026-03-23 13:56:38 | DEBUG    | bot.client | → GET https://demo-fapi.binance.com/fapi/v1/time  params={}
+2026-03-23 13:56:38 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): demo-fapi.binance.com:443
+2026-03-23 13:56:39 | DEBUG    | urllib3.connectionpool | https://demo-fapi.binance.com:443 "GET /fapi/v1/time HTTP/1.1" 200 28
+2026-03-23 13:56:39 | DEBUG    | bot.client | ← HTTP 200  body={"serverTime":1774254399399}
+2026-03-23 13:56:39 | INFO     | __main__ | Server time: {'serverTime': 1774254399399}
+2026-03-23 13:56:39 | INFO     | bot.orders | Submitting BUY MARKET order | symbol=BTCUSDT qty=0.001 price=None stop=None
+2026-03-23 13:56:39 | INFO     | bot.client | Placing order → {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.001}
+2026-03-23 13:56:39 | DEBUG    | bot.client | → POST https://demo-fapi.binance.com/fapi/v1/order  params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.001, 'timestamp': 1774254399478}
+2026-03-23 13:56:39 | DEBUG    | urllib3.connectionpool | https://demo-fapi.binance.com:443 "POST /fapi/v1/order HTTP/1.1" 400 100
+2026-03-23 13:56:39 | DEBUG    | bot.client | ← HTTP 400  body={"code":-4164,"msg":"Order's notional must be no smaller than 100 (unless you choose reduce only)."}
+2026-03-23 13:56:39 | ERROR    | bot.client | API error HTTP 400 code=-4164 msg=Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-23 13:56:39 | ERROR    | bot.orders | Binance API error while placing order: [HTTP 400] Binance error -4164: Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-23 13:56:39 | ERROR    | __main__ | Order placement failed: [HTTP 400] Binance error -4164: Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-23 13:57:22 | INFO     | root | Logging initialised → logs\trading_bot_20260323.log
+2026-03-23 13:57:22 | INFO     | root | Logging initialised → logs\trading_bot_20260323.log
+2026-03-23 13:57:22 | DEBUG    | __main__ | CLI args: {'api_key': None, 'api_secret': None, 'symbol': 'BTCUSDT', 'side': 'BUY', 'order_type': 'MARKET', 'quantity': 0.002, 'price': None, 'stop_price': None, 'log_level': 'DEBUG'}
+2026-03-23 13:57:22 | DEBUG    | bot.validators | Symbol validated: BTCUSDT
+2026-03-23 13:57:22 | DEBUG    | bot.validators | Side validated: BUY
+2026-03-23 13:57:22 | DEBUG    | bot.validators | Order type validated: MARKET
+2026-03-23 13:57:22 | DEBUG    | bot.validators | Quantity validated: 0.002
+2026-03-23 13:57:22 | DEBUG    | bot.validators | Price not required for MARKET order.
+2026-03-23 13:57:22 | INFO     | bot.client | BinanceClient initialised → base_url=https://demo-fapi.binance.com
+2026-03-23 13:57:22 | DEBUG    | bot.client | → GET https://demo-fapi.binance.com/fapi/v1/time  params={}
+2026-03-23 13:57:22 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): demo-fapi.binance.com:443
+2026-03-23 13:57:24 | DEBUG    | urllib3.connectionpool | https://demo-fapi.binance.com:443 "GET /fapi/v1/time HTTP/1.1" 200 28
+2026-03-23 13:57:24 | DEBUG    | bot.client | ← HTTP 200  body={"serverTime":1774254443906}
+2026-03-23 13:57:24 | INFO     | __main__ | Server time: {'serverTime': 1774254443906}
+2026-03-23 13:57:24 | INFO     | bot.orders | Submitting BUY MARKET order | symbol=BTCUSDT qty=0.002 price=None stop=None
+2026-03-23 13:57:24 | INFO     | bot.client | Placing order → {'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.002}
+2026-03-23 13:57:24 | DEBUG    | bot.client | → POST https://demo-fapi.binance.com/fapi/v1/order  params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.002, 'timestamp': 1774254444016}
+2026-03-23 13:57:24 | DEBUG    | urllib3.connectionpool | https://demo-fapi.binance.com:443 "POST /fapi/v1/order HTTP/1.1" 200 None
+2026-03-23 13:57:24 | DEBUG    | bot.client | ← HTTP 200  body={"orderId":12953367215,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"hDKTLnUHqV6Dz12wgTSLek","price":"0.00","avgPrice":"0.00","origQty":"0.002","executedQty":"0.000","cumQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updateTim
+2026-03-23 13:57:24 | INFO     | bot.client | Order response ← {'orderId': 12953367215, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'hDKTLnUHqV6Dz12wgTSLek', 'price': '0.00', 'avgPrice': '0.00', 'origQty': '0.002', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'MARKET', 'reduceOnly': False, 'closePosition': False, 'side': 'BUY', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1774254444155}
+2026-03-23 13:57:24 | INFO     | bot.orders | Order placed successfully | orderId=12953367215 status=NEW
+2026-03-23 13:57:24 | INFO     | __main__ | Bot run completed successfully.
+2026-03-23 13:58:38 | INFO     | root | Logging initialised → logs\trading_bot_20260323.log
+2026-03-23 13:58:38 | INFO     | root | Logging initialised → logs\trading_bot_20260323.log
+2026-03-23 13:58:38 | DEBUG    | __main__ | CLI args: {'api_key': None, 'api_secret': None, 'symbol': 'BTCUSDT', 'side': 'SELL', 'order_type': 'LIMIT', 'quantity': 0.002, 'price': 120000.0, 'stop_price': None, 'log_level': 'DEBUG'}
+2026-03-23 13:58:38 | DEBUG    | bot.validators | Symbol validated: BTCUSDT
+2026-03-23 13:58:38 | DEBUG    | bot.validators | Side validated: SELL
+2026-03-23 13:58:38 | DEBUG    | bot.validators | Order type validated: LIMIT
+2026-03-23 13:58:38 | DEBUG    | bot.validators | Quantity validated: 0.002
+2026-03-23 13:58:38 | DEBUG    | bot.validators | Price validated: 120000.0
+2026-03-23 13:58:38 | INFO     | bot.client | BinanceClient initialised → base_url=https://demo-fapi.binance.com
+2026-03-23 13:58:38 | DEBUG    | bot.client | → GET https://demo-fapi.binance.com/fapi/v1/time  params={}
+2026-03-23 13:58:38 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): demo-fapi.binance.com:443
+2026-03-23 13:58:40 | DEBUG    | urllib3.connectionpool | https://demo-fapi.binance.com:443 "GET /fapi/v1/time HTTP/1.1" 200 28
+2026-03-23 13:58:40 | DEBUG    | bot.client | ← HTTP 200  body={"serverTime":1774254520152}
+2026-03-23 13:58:40 | INFO     | __main__ | Server time: {'serverTime': 1774254520152}
+2026-03-23 13:58:40 | INFO     | bot.orders | Submitting SELL LIMIT order | symbol=BTCUSDT qty=0.002 price=120000.0 stop=None
+2026-03-23 13:58:40 | INFO     | bot.client | Placing order → {'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': 0.002, 'price': 120000.0, 'timeInForce': 'GTC'}
+2026-03-23 13:58:40 | DEBUG    | bot.client | → POST https://demo-fapi.binance.com/fapi/v1/order  params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': 0.002, 'price': 120000.0, 'timeInForce': 'GTC', 'timestamp': 1774254520228}
+2026-03-23 13:58:40 | DEBUG    | urllib3.connectionpool | https://demo-fapi.binance.com:443 "POST /fapi/v1/order HTTP/1.1" 200 None
+2026-03-23 13:58:40 | DEBUG    | bot.client | ← HTTP 200  body={"orderId":12953385084,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"kLT9YJ5VA2AQFUp4EmqL13","price":"120000.00","avgPrice":"0.00","origQty":"0.002","executedQty":"0.000","cumQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updat
+2026-03-23 13:58:40 | INFO     | bot.client | Order response ← {'orderId': 12953385084, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'kLT9YJ5VA2AQFUp4EmqL13', 'price': '120000.00', 'avgPrice': '0.00', 'origQty': '0.002', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1774254520355}
+2026-03-23 13:58:40 | INFO     | bot.orders | Order placed successfully | orderId=12953385084 status=NEW
+2026-03-23 13:58:40 | INFO     | __main__ | Bot run completed successfully.
+2026-03-23 13:58:46 | INFO     | root | Logging initialised → logs\trading_bot_20260323.log
+2026-03-23 13:58:46 | INFO     | root | Logging initialised → logs\trading_bot_20260323.log
+2026-03-23 13:58:46 | DEBUG    | __main__ | CLI args: {'api_key': None, 'api_secret': None, 'symbol': 'BTCUSDT', 'side': 'SELL', 'order_type': 'STOP_MARKET', 'quantity': 0.002, 'price': None, 'stop_price': 80000.0, 'log_level': 'DEBUG'}
+2026-03-23 13:58:46 | DEBUG    | bot.validators | Symbol validated: BTCUSDT
+2026-03-23 13:58:46 | DEBUG    | bot.validators | Side validated: SELL
+2026-03-23 13:58:46 | DEBUG    | bot.validators | Order type validated: STOP_MARKET
+2026-03-23 13:58:46 | DEBUG    | bot.validators | Quantity validated: 0.002
+2026-03-23 13:58:46 | ERROR    | __main__ | Validation error: Price is required for STOP_MARKET orders. Provide it with --price.
+2026-03-23 14:01:53 | INFO     | root | Logging initialised → logs\trading_bot_20260323.log
+2026-03-23 14:01:53 | INFO     | root | Logging initialised → logs\trading_bot_20260323.log
+2026-03-23 14:01:53 | DEBUG    | __main__ | CLI args: {'api_key': None, 'api_secret': None, 'symbol': 'BTCUSDT', 'side': 'SELL', 'order_type': 'STOP_MARKET', 'quantity': 0.002, 'price': None, 'stop_price': 80000.0, 'log_level': 'DEBUG'}
+2026-03-23 14:01:53 | DEBUG    | bot.validators | Symbol validated: BTCUSDT
+2026-03-23 14:01:53 | DEBUG    | bot.validators | Side validated: SELL
+2026-03-23 14:01:53 | DEBUG    | bot.validators | Order type validated: STOP_MARKET
+2026-03-23 14:01:53 | DEBUG    | bot.validators | Quantity validated: 0.002
+2026-03-23 14:01:53 | DEBUG    | bot.validators | Price not required for STOP_MARKET order.
+2026-03-23 14:01:53 | DEBUG    | bot.validators | Stop price validated: 80000.0
+2026-03-23 14:01:53 | INFO     | bot.client | BinanceClient initialised → base_url=https://demo-fapi.binance.com
+2026-03-23 14:01:53 | DEBUG    | bot.client | → GET https://demo-fapi.binance.com/fapi/v1/time  params={}
+2026-03-23 14:01:53 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): demo-fapi.binance.com:443
+2026-03-23 14:01:54 | DEBUG    | urllib3.connectionpool | https://demo-fapi.binance.com:443 "GET /fapi/v1/time HTTP/1.1" 200 28
+2026-03-23 14:01:54 | DEBUG    | bot.client | ← HTTP 200  body={"serverTime":1774254714724}
+2026-03-23 14:01:54 | INFO     | __main__ | Server time: {'serverTime': 1774254714724}
+2026-03-23 14:01:54 | INFO     | bot.orders | Submitting SELL STOP_MARKET order | symbol=BTCUSDT qty=0.002 price=None stop=80000.0
+2026-03-23 14:01:54 | INFO     | bot.client | Placing order → {'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'STOP_MARKET', 'quantity': 0.002, 'stopPrice': 80000.0}
+2026-03-23 14:01:54 | DEBUG    | bot.client | → POST https://demo-fapi.binance.com/fapi/v1/order  params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'STOP_MARKET', 'quantity': 0.002, 'stopPrice': 80000.0, 'timestamp': 1774254714822}
+2026-03-23 14:01:55 | DEBUG    | urllib3.connectionpool | https://demo-fapi.binance.com:443 "POST /fapi/v1/order HTTP/1.1" 400 115
+2026-03-23 14:01:55 | DEBUG    | bot.client | ← HTTP 400  body={"code":-4120,"msg":"Order type not supported for this endpoint. Please use the Algo Order API endpoints instead."}
+2026-03-23 14:01:55 | ERROR    | bot.client | API error HTTP 400 code=-4120 msg=Order type not supported for this endpoint. Please use the Algo Order API endpoints instead.
+2026-03-23 14:01:55 | ERROR    | bot.orders | Binance API error while placing order: [HTTP 400] Binance error -4120: Order type not supported for this endpoint. Please use the Algo Order API endpoints instead.
+2026-03-23 14:01:55 | ERROR    | __main__ | Order placement failed: [HTTP 400] Binance error -4120: Order type not supported for this endpoint. Please use the Algo Order API endpoints instead.
+2026-03-23 14:02:23 | INFO     | root | Logging initialised → logs\trading_bot_20260323.log
+2026-03-23 14:02:23 | INFO     | root | Logging initialised → logs\trading_bot_20260323.log
+2026-03-23 14:02:23 | DEBUG    | __main__ | CLI args: {'api_key': None, 'api_secret': None, 'symbol': 'BTCUSDT', 'side': 'SELL', 'order_type': 'LIMIT', 'quantity': 0.002, 'price': 120000.0, 'stop_price': None, 'log_level': 'DEBUG'}
+2026-03-23 14:02:23 | DEBUG    | bot.validators | Symbol validated: BTCUSDT
+2026-03-23 14:02:23 | DEBUG    | bot.validators | Side validated: SELL
+2026-03-23 14:02:23 | DEBUG    | bot.validators | Order type validated: LIMIT
+2026-03-23 14:02:23 | DEBUG    | bot.validators | Quantity validated: 0.002
+2026-03-23 14:02:23 | DEBUG    | bot.validators | Price validated: 120000.0
+2026-03-23 14:02:23 | INFO     | bot.client | BinanceClient initialised → base_url=https://demo-fapi.binance.com
+2026-03-23 14:02:23 | DEBUG    | bot.client | → GET https://demo-fapi.binance.com/fapi/v1/time  params={}
+2026-03-23 14:02:23 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): demo-fapi.binance.com:443
+2026-03-23 14:02:24 | DEBUG    | urllib3.connectionpool | https://demo-fapi.binance.com:443 "GET /fapi/v1/time HTTP/1.1" 200 28
+2026-03-23 14:02:24 | DEBUG    | bot.client | ← HTTP 200  body={"serverTime":1774254744677}
+2026-03-23 14:02:24 | INFO     | __main__ | Server time: {'serverTime': 1774254744677}
+2026-03-23 14:02:24 | INFO     | bot.orders | Submitting SELL LIMIT order | symbol=BTCUSDT qty=0.002 price=120000.0 stop=None
+2026-03-23 14:02:24 | INFO     | bot.client | Placing order → {'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': 0.002, 'price': 120000.0, 'timeInForce': 'GTC'}
+2026-03-23 14:02:24 | DEBUG    | bot.client | → POST https://demo-fapi.binance.com/fapi/v1/order  params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': 0.002, 'price': 120000.0, 'timeInForce': 'GTC', 'timestamp': 1774254744759}
+2026-03-23 14:02:25 | DEBUG    | urllib3.connectionpool | https://demo-fapi.binance.com:443 "POST /fapi/v1/order HTTP/1.1" 200 None
+2026-03-23 14:02:25 | DEBUG    | bot.client | ← HTTP 200  body={"orderId":12953438676,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"AQPqjZRJxGFE1Ro83BVPPw","price":"120000.00","avgPrice":"0.00","origQty":"0.002","executedQty":"0.000","cumQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","priceMatch":"NONE","selfTradePreventionMode":"EXPIRE_MAKER","goodTillDate":0,"updat
+2026-03-23 14:02:25 | INFO     | bot.client | Order response ← {'orderId': 12953438676, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'AQPqjZRJxGFE1Ro83BVPPw', 'price': '120000.00', 'avgPrice': '0.00', 'origQty': '0.002', 'executedQty': '0.000', 'cumQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'reduceOnly': False, 'closePosition': False, 'side': 'SELL', 'positionSide': 'BOTH', 'stopPrice': '0.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'priceMatch': 'NONE', 'selfTradePreventionMode': 'EXPIRE_MAKER', 'goodTillDate': 0, 'updateTime': 1774254744919}
+2026-03-23 14:02:25 | INFO     | bot.orders | Order placed successfully | orderId=12953438676 status=NEW
+2026-03-23 14:02:25 | INFO     | __main__ | Bot run completed successfully.

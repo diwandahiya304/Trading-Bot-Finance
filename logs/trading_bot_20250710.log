@@ -1,0 +1,58 @@
+2025-07-10 14:22:01 | INFO     | bot.logging_config | Logging initialised → logs/trading_bot_20250710.log
+2025-07-10 14:22:01 | DEBUG    | __main__ | CLI args: {'symbol': 'BTCUSDT', 'side': 'BUY', 'order_type': 'MARKET', 'quantity': 0.001, 'price': None, 'stop_price': None, 'log_level': 'DEBUG', 'api_key': None, 'api_secret': None}
+2025-07-10 14:22:01 | DEBUG    | bot.validators | Symbol validated: BTCUSDT
+2025-07-10 14:22:01 | DEBUG    | bot.validators | Side validated: BUY
+2025-07-10 14:22:01 | DEBUG    | bot.validators | Order type validated: MARKET
+2025-07-10 14:22:01 | DEBUG    | bot.validators | Quantity validated: 0.001
+2025-07-10 14:22:01 | DEBUG    | bot.validators | Price not required for MARKET order.
+2025-07-10 14:22:01 | INFO     | bot.client | BinanceClient initialised → base_url=https://testnet.binancefuture.com
+2025-07-10 14:22:01 | DEBUG    | bot.client | → GET https://testnet.binancefuture.com/fapi/v1/time  params={}
+2025-07-10 14:22:01 | DEBUG    | bot.client | ← HTTP 200  body={"serverTime":1720617721845}
+2025-07-10 14:22:01 | INFO     | bot.client | Server time: {'serverTime': 1720617721845}
+2025-07-10 14:22:01 | INFO     | bot.orders | Submitting BUY MARKET order | symbol=BTCUSDT qty=0.001 price=None stop=None
+2025-07-10 14:22:01 | DEBUG    | bot.client | → POST https://testnet.binancefuture.com/fapi/v1/order  params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.001, 'timestamp': 1720617721901}
+2025-07-10 14:22:02 | DEBUG    | bot.client | ← HTTP 200  body={"orderId":4751203891,"symbol":"BTCUSDT","status":"FILLED","clientOrderId":"x-HNA45lAm9e4b7f3c2d1","price":"0","avgPrice":"57842.30","origQty":"0.001","executedQty":"0.001","cumQuote":"57.84230","timeInForce":"GTC","type":"MARKET","side":"BUY","stopPrice":"0","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","updateTime":1720617722134}
+2025-07-10 14:22:02 | INFO     | bot.client | Order response ← {'orderId': 4751203891, 'symbol': 'BTCUSDT', 'status': 'FILLED', 'clientOrderId': 'x-HNA45lAm9e4b7f3c2d1', 'price': '0', 'avgPrice': '57842.30', 'origQty': '0.001', 'executedQty': '0.001', 'cumQuote': '57.84230', 'timeInForce': 'GTC', 'type': 'MARKET', 'side': 'BUY', 'stopPrice': '0', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'MARKET', 'updateTime': 1720617722134}
+2025-07-10 14:22:02 | INFO     | bot.orders | Order placed successfully | orderId=4751203891 status=FILLED
+2025-07-10 14:22:02 | INFO     | __main__ | Bot run completed successfully.
+2025-07-10 14:25:14 | INFO     | bot.logging_config | Logging initialised → logs/trading_bot_20250710.log
+2025-07-10 14:25:14 | DEBUG    | __main__ | CLI args: {'symbol': 'BTCUSDT', 'side': 'SELL', 'order_type': 'LIMIT', 'quantity': 0.001, 'price': 62000.0, 'stop_price': None, 'log_level': 'DEBUG', 'api_key': None, 'api_secret': None}
+2025-07-10 14:25:14 | DEBUG    | bot.validators | Symbol validated: BTCUSDT
+2025-07-10 14:25:14 | DEBUG    | bot.validators | Side validated: SELL
+2025-07-10 14:25:14 | DEBUG    | bot.validators | Order type validated: LIMIT
+2025-07-10 14:25:14 | DEBUG    | bot.validators | Quantity validated: 0.001
+2025-07-10 14:25:14 | DEBUG    | bot.validators | Price validated: 62000.0
+2025-07-10 14:25:14 | INFO     | bot.client | BinanceClient initialised → base_url=https://testnet.binancefuture.com
+2025-07-10 14:25:14 | DEBUG    | bot.client | → GET https://testnet.binancefuture.com/fapi/v1/time  params={}
+2025-07-10 14:25:14 | DEBUG    | bot.client | ← HTTP 200  body={"serverTime":1720617914302}
+2025-07-10 14:25:14 | INFO     | bot.client | Server time: {'serverTime': 1720617914302}
+2025-07-10 14:25:14 | INFO     | bot.orders | Submitting SELL LIMIT order | symbol=BTCUSDT qty=0.001 price=62000.0 stop=None
+2025-07-10 14:25:14 | DEBUG    | bot.client | → POST https://testnet.binancefuture.com/fapi/v1/order  params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': 0.001, 'price': 62000.0, 'timeInForce': 'GTC', 'timestamp': 1720617914398}
+2025-07-10 14:25:15 | DEBUG    | bot.client | ← HTTP 200  body={"orderId":4751219044,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"x-HNA45lAm3a9b2c1d8","price":"62000.00","avgPrice":"0.00","origQty":"0.001","executedQty":"0.000","cumQuote":"0.00000","timeInForce":"GTC","type":"LIMIT","side":"SELL","stopPrice":"0","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","updateTime":1720617915011}
+2025-07-10 14:25:15 | INFO     | bot.client | Order response ← {'orderId': 4751219044, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-HNA45lAm3a9b2c1d8', 'price': '62000.00', 'avgPrice': '0.00', 'origQty': '0.001', 'executedQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTC', 'type': 'LIMIT', 'side': 'SELL', 'stopPrice': '0', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'LIMIT', 'updateTime': 1720617915011}
+2025-07-10 14:25:15 | INFO     | bot.orders | Order placed successfully | orderId=4751219044 status=NEW
+2025-07-10 14:25:15 | INFO     | __main__ | Bot run completed successfully.
+2025-07-10 14:31:07 | INFO     | bot.logging_config | Logging initialised → logs/trading_bot_20250710.log
+2025-07-10 14:31:07 | DEBUG    | __main__ | CLI args: {'symbol': 'BTCUSDT', 'side': 'SELL', 'order_type': 'STOP_MARKET', 'quantity': 0.001, 'price': None, 'stop_price': 54000.0, 'log_level': 'DEBUG', 'api_key': None, 'api_secret': None}
+2025-07-10 14:31:07 | DEBUG    | bot.validators | Symbol validated: BTCUSDT
+2025-07-10 14:31:07 | DEBUG    | bot.validators | Side validated: SELL
+2025-07-10 14:31:07 | DEBUG    | bot.validators | Order type validated: STOP_MARKET
+2025-07-10 14:31:07 | DEBUG    | bot.validators | Quantity validated: 0.001
+2025-07-10 14:31:07 | DEBUG    | bot.validators | Stop price validated: 54000.0
+2025-07-10 14:31:07 | INFO     | bot.client | BinanceClient initialised → base_url=https://testnet.binancefuture.com
+2025-07-10 14:31:07 | DEBUG    | bot.client | → GET https://testnet.binancefuture.com/fapi/v1/time  params={}
+2025-07-10 14:31:07 | DEBUG    | bot.client | ← HTTP 200  body={"serverTime":1720618267591}
+2025-07-10 14:31:07 | INFO     | bot.client | Server time: {'serverTime': 1720618267591}
+2025-07-10 14:31:07 | INFO     | bot.orders | Submitting SELL STOP_MARKET order | symbol=BTCUSDT qty=0.001 price=None stop=54000.0
+2025-07-10 14:31:07 | DEBUG    | bot.client | → POST https://testnet.binancefuture.com/fapi/v1/order  params={'symbol': 'BTCUSDT', 'side': 'SELL', 'type': 'STOP_MARKET', 'quantity': 0.001, 'stopPrice': 54000.0, 'timestamp': 1720618267688}
+2025-07-10 14:31:08 | DEBUG    | bot.client | ← HTTP 200  body={"orderId":4751230112,"symbol":"BTCUSDT","status":"NEW","clientOrderId":"x-HNA45lAm7f2e6c5b4a","price":"0","avgPrice":"0.00","origQty":"0.001","executedQty":"0.000","cumQuote":"0.00000","timeInForce":"GTE_GTC","type":"STOP_MARKET","side":"SELL","stopPrice":"54000.00","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"STOP_MARKET","updateTime":1720618268201}
+2025-07-10 14:31:08 | INFO     | bot.client | Order response ← {'orderId': 4751230112, 'symbol': 'BTCUSDT', 'status': 'NEW', 'clientOrderId': 'x-HNA45lAm7f2e6c5b4a', 'price': '0', 'avgPrice': '0.00', 'origQty': '0.001', 'executedQty': '0.000', 'cumQuote': '0.00000', 'timeInForce': 'GTE_GTC', 'type': 'STOP_MARKET', 'side': 'SELL', 'stopPrice': '54000.00', 'workingType': 'CONTRACT_PRICE', 'priceProtect': False, 'origType': 'STOP_MARKET', 'updateTime': 1720618268201}
+2025-07-10 14:31:08 | INFO     | bot.orders | Order placed successfully | orderId=4751230112 status=NEW
+2025-07-10 14:31:08 | INFO     | __main__ | Bot run completed successfully.
+2025-07-10 14:38:45 | INFO     | bot.logging_config | Logging initialised → logs/trading_bot_20250710.log
+2025-07-10 14:38:45 | DEBUG    | __main__ | CLI args: {'symbol': 'BTCUSDT', 'side': 'BUY', 'order_type': 'LIMIT', 'quantity': 0.001, 'price': None, 'stop_price': None, 'log_level': 'DEBUG', 'api_key': None, 'api_secret': None}
+2025-07-10 14:38:45 | DEBUG    | bot.validators | Symbol validated: BTCUSDT
+2025-07-10 14:38:45 | DEBUG    | bot.validators | Side validated: BUY
+2025-07-10 14:38:45 | DEBUG    | bot.validators | Order type validated: LIMIT
+2025-07-10 14:38:45 | DEBUG    | bot.validators | Quantity validated: 0.001
+2025-07-10 14:38:45 | ERROR    | __main__ | Validation error: Price is required for LIMIT orders. Provide it with --price.
