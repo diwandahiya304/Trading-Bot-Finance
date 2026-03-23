@@ -1,6 +1,6 @@
-# Binance Futures Testnet Trading Bot
+# Binance Futures Trading Bot
 
-A lightweight Python CLI application for placing orders on the **Binance Futures Testnet (USDT-M)**. Built with a clean, layered architecture: a raw REST client, an order-logic layer, an input-validation layer, and an `argparse`-powered CLI.
+A lightweight Python CLI application for placing orders on the **Binance Futures Demo Trading environment (USDT-M)**. Built with a clean, layered architecture: a raw REST client, an order-logic layer, an input-validation layer, and an `argparse`-powered CLI.
 
 ---
 
@@ -27,21 +27,24 @@ trading_bot/
 ### 1. Prerequisites
 
 - Python 3.9 or later
-- A Binance Futures **Testnet** account → https://testnet.binancefuture.com
+- A Binance account with **Demo Trading** enabled
+- Demo Trading API credentials from: https://www.binance.com/en/my/settings/api-management (switch to Demo Trading mode first)
 
-### 2. Clone / unzip the project
+### 2. Clone the repository
 
 ```bash
-git clone <repo-url>
-cd trading_bot
+git clone https://github.com/diwandahiya304/Trading-Bot-Finance.git
+cd Trading-Bot-Finance
 ```
 
 ### 3. Create and activate a virtual environment (recommended)
 
 ```bash
 python -m venv .venv
+
 # macOS / Linux
 source .venv/bin/activate
+
 # Windows
 .venv\Scripts\activate
 ```
@@ -52,13 +55,18 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 5. Set your testnet API credentials
+### 5. Set your API credentials
 
-Export them as environment variables (recommended):
-
+**Linux / macOS:**
 ```bash
-export BINANCE_API_KEY="your_testnet_api_key"
-export BINANCE_API_SECRET="your_testnet_api_secret"
+export BINANCE_API_KEY="your_api_key_here"
+export BINANCE_API_SECRET="your_secret_key_here"
+```
+
+**Windows:**
+```cmd
+set BINANCE_API_KEY=your_api_key_here
+set BINANCE_API_SECRET=your_secret_key_here
 ```
 
 Or pass them directly on each command with `--api-key` / `--api-secret`.
@@ -77,38 +85,57 @@ python cli.py --symbol SYMBOL --side SIDE --type TYPE --qty QUANTITY [OPTIONS]
 
 #### Market BUY
 
-```bash
-python cli.py --symbol BTCUSDT --side BUY --type MARKET --qty 0.001
+```cmd
+python cli.py --symbol BTCUSDT --side BUY --type MARKET --qty 0.002
+```
+
+**Output:**
+```
+════════════════════════════════════════════════════
+  ORDER REQUEST SUMMARY
+────────────────────────────────────────────────────
+  Symbol     : BTCUSDT
+  Side       : BUY
+  Type       : MARKET
+  Quantity   : 0.002
+════════════════════════════════════════════════════
+
+════════════════════════════════════════════════════
+  ✓  ORDER PLACED SUCCESSFULLY
+────────────────────────────────────────────────────
+  Order ID       : 12953367215
+  Client Ord ID  : hDKTLnUHqV6Dz12wgTSLek
+  Symbol         : BTCUSDT
+  Side           : BUY
+  Type           : MARKET
+  Status         : NEW
+  Orig Qty       : 0.002
+  Executed Qty   : 0.000
+════════════════════════════════════════════════════
 ```
 
 #### Limit SELL (price required)
 
-```bash
-python cli.py --symbol BTCUSDT --side SELL --type LIMIT --qty 0.001 --price 62000
+```cmd
+python cli.py --symbol BTCUSDT --side SELL --type LIMIT --qty 0.002 --price 120000
 ```
 
-#### Stop-Market SELL (bonus order type — stop-price required)
+#### Stop-Market SELL — bonus order type (code supported, may vary by environment)
 
-```bash
-python cli.py --symbol BTCUSDT --side SELL --type STOP_MARKET --qty 0.001 --stop-price 54000
+```cmd
+python cli.py --symbol BTCUSDT --side SELL --type STOP_MARKET --qty 0.002 --stop-price 80000
 ```
 
-#### Passing credentials inline
+#### Pass credentials inline
 
-```bash
-python cli.py \
-  --api-key  YOUR_KEY \
-  --api-secret YOUR_SECRET \
-  --symbol ETHUSDT \
-  --side BUY \
-  --type MARKET \
-  --qty 0.01
+```cmd
+python cli.py --api-key YOUR_KEY --api-secret YOUR_SECRET --symbol BTCUSDT --side BUY --type MARKET --qty 0.002
 ```
 
 #### Change log verbosity
 
-```bash
-python cli.py --symbol BTCUSDT --side BUY --type MARKET --qty 0.001 --log-level INFO
+```cmd
+python cli.py --symbol BTCUSDT --side BUY --type MARKET --qty 0.002 --log-level INFO
 ```
 
 ---
@@ -129,45 +156,14 @@ python cli.py --symbol BTCUSDT --side BUY --type MARKET --qty 0.001 --log-level 
 
 ---
 
-## Sample Output
-
-```
-════════════════════════════════════════════════════
-  ORDER REQUEST SUMMARY
-────────────────────────────────────────────────────
-  Symbol     : BTCUSDT
-  Side       : BUY
-  Type       : MARKET
-  Quantity   : 0.001
-════════════════════════════════════════════════════
-
-════════════════════════════════════════════════════
-  ✓  ORDER PLACED SUCCESSFULLY
-────────────────────────────────────────────────────
-  Order ID       : 4751203891
-  Client Ord ID  : x-HNA45lAm9e4b7f3c2d1
-  Symbol         : BTCUSDT
-  Side           : BUY
-  Type           : MARKET
-  Status         : FILLED
-  Orig Qty       : 0.001
-  Executed Qty   : 0.001
-  Avg Price      : 57842.30
-  Time in Force  : GTC
-════════════════════════════════════════════════════
-```
-
----
-
 ## Logging
 
 Logs are written to `logs/trading_bot_YYYYMMDD.log` automatically.
 
-- **File handler** — captures `DEBUG` and above (full API request/response detail).
-- **Console handler** — shows `WARNING` and above (keeps terminal output clean).
+- **File handler** — captures `DEBUG` and above (full API request/response detail)
+- **Console handler** — shows `WARNING` and above (keeps terminal output clean)
 
-Each log line follows the format:
-
+Each log line format:
 ```
 YYYY-MM-DD HH:MM:SS | LEVEL    | module | message
 ```
@@ -181,17 +177,18 @@ YYYY-MM-DD HH:MM:SS | LEVEL    | module | message
 | Missing/invalid CLI argument | Validation error printed; non-zero exit |
 | Price missing for LIMIT order | Validation error before any network call |
 | Network timeout / connection failure | `BinanceNetworkError` caught; error printed |
-| Binance API error (e.g. -1121 invalid symbol) | `BinanceAPIError` caught; HTTP code + message printed |
+| Binance API error (e.g. invalid symbol) | `BinanceAPIError` caught; HTTP code + message printed |
 | Missing credentials | Clear message listing what is missing; non-zero exit |
 
 ---
 
 ## Assumptions
 
-1. **Demo Trading** — the base URL is set to `https://demo-fapi.binance.com` (Binance Futures Demo Trading). For the classic testnet or production, change `TESTNET_BASE_URL` in `bot/client.py`.
+1. **Demo Trading environment** — the base URL is set to `https://demo-fapi.binance.com`. For the classic testnet (`testnet.binancefuture.com`) or production, change `TESTNET_BASE_URL` in `bot/client.py`.
 2. **LIMIT orders use `timeInForce=GTC`** (Good Till Cancelled) by default.
 3. Quantity and price precision validation (lot size / tick size filters) is delegated to the Binance API rather than implemented client-side, to avoid maintaining stale filter tables.
-4. No dependency on `python-binance`; all API calls are made with plain `requests` for transparency and minimal footprint.
+4. Minimum order notional on BTCUSDT is $100 — use at least `qty=0.002` at current BTC prices.
+5. No dependency on `python-binance`; all API calls are made with plain `requests` for transparency and minimal footprint.
 
 ---
 
